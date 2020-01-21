@@ -22,12 +22,6 @@ public class VirtualPetShelter {
 		shelter.put(getPetKey(),getNewPet());
 	}
 	
-	int shelterSize;
-	
-	public int getShelterSize() {
-		return this.shelterSize = shelter.size();
-	}
-	
 	public int petsShelteredForAllTime;
 	
 	public static int getPetKey() {
@@ -64,17 +58,23 @@ public class VirtualPetShelter {
 
 	}
 
+	//This method should return the new pets name
+	//it should be used in a creation loop in the App
 	public String getNewPetName() {
-		// TODO Auto-generated method stub
+		//needs coding***
 		return null;
 	}
 
+	//This method makes a new pet based on the VirtualPetShelter class variables
 	public VirtualPet getNewPet() {
 		VirtualPet newPet = new VirtualPet(newPetHunger, newPetThirst, newPetBoredom, newPetName, newPetStatus);
 
 		return newPet;
 	}
 
+	//This method will create the blank slate for a new pet so that after pet creation
+	//Variables will be reset...I am not certain I need this, unless for some reason
+	//the variables where to be static.
 	public void resetNewPetVariables() {
 		newPetHunger = 0;
 		newPetThirst = 0;
@@ -83,11 +83,17 @@ public class VirtualPetShelter {
 		newPetStatus = null;
 	}
 
-	public static Object Tick() {
-		getShelterSize();
-		for (ShelterSize; )
-		
-		return null;
+	int shelterSize;
+	//This method will give us the number of pets currently in the shelter
+	public int getShelterSize() {
+		this.shelterSize = shelter.size();
+		return this.shelterSize;
+	}
+	
+	//This is a representation of the cost to manage the shelter based on number of pets
+	public Object Tick() {
+		int cost = (getShelterSize() * 2);
+		return cost;
 	}
 
 }

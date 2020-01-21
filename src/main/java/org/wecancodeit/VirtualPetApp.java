@@ -11,7 +11,7 @@ public class VirtualPetApp {
 		String shelter = "funded";
 		
 		do {
-			for (int funds = 1; funds > 0; VirtualPetShelter.Tick()) {
+			for (int funds = 1; funds > 0; funds = (funds - VirtualPetShelter.Tick())) {
 			if (funds == 0) {
 				shelter = "unfunded";
 				break;
@@ -29,7 +29,8 @@ public class VirtualPetApp {
  * option to feed a pet
  * option to water a pet
  */
-		
+		System.out.println("Unfotunatly the shelter has insufficent funds to operate.");
+		System.out.println("All pets have been relocated to other shelters.");
 		input.close();
 	}
 

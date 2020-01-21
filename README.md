@@ -8,7 +8,9 @@ code the "map name".put method in PetShelter.
 
 
 **************************************
-Current Task:
+Current Tasks:
+
+working out pet shelter tick method
 
 code PetShelter newPet constructor method that pulls user inputs from the VirtualPetApp class and creates a newPet based on the newPet constructor in the VirtualPet class. "partially done, still need to do App work" 
 
