@@ -4,8 +4,8 @@ public class VirtualPet {
 	private int hunger = 0;
 	private int thirst = 0;
 	private int boredom = 0;
-	String status = "Alive";
 	String petName;
+	String status = "Alive";
 
 	public VirtualPet(int hunger, int thirst, int boredom, String petName, String status) {
 		this.hunger = hunger;

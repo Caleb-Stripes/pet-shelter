@@ -10,8 +10,7 @@ import org.junit.Test;
 public class petTest {
 
 	VirtualPet underTest = new VirtualPet(0, 0, 0, null, null);
-	//Moved the underTest object of the VirtualPet2 class out of the test methods.
-	//This action makes it globally accessible by all the methods in the test class.
+	
 		@Test
 		public void hungerShouldBeZeroAtStart() {
 			int  result = underTest.getHunger();
