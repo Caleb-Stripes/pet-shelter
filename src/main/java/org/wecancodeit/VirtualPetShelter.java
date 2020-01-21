@@ -9,7 +9,7 @@ public class VirtualPetShelter {
 	private int newPetBoredom;
 	private String newPetName = null;
 	private String newPetStatus = "Alive";
-	private int petIndex;
+	private static int petKey = 0;
 	
 	public Object newPet(int newPetHunger, int newPetThirst, int newPetBoredom, Object newPetName,
 			String newPetStatus) {
@@ -19,12 +19,20 @@ public class VirtualPetShelter {
 	HashMap<Integer, VirtualPet> shelter = new HashMap<Integer, VirtualPet>();
 	
 	public void addNewPetToShelter() {
-		shelter.put(getPetIndex(),getNewPet());
+		shelter.put(getPetKey(),getNewPet());
 	}
 	
-	public int getPetIndex() {
-		this.petIndex = (shelter.size() + 1);
-		return this.petIndex;
+	int shelterSize;
+	
+	public int getShelterSize() {
+		return this.shelterSize = shelter.size();
+	}
+	
+	public int petsShelteredForAllTime;
+	
+	public static int getPetKey() {
+		petKey = (petKey + 1);
+		return petKey;
 		
 	}
 	
@@ -73,6 +81,13 @@ public class VirtualPetShelter {
 		newPetBoredom = 0;
 		newPetName = null;
 		newPetStatus = null;
+	}
+
+	public static Object Tick() {
+		getShelterSize();
+		for (ShelterSize; )
+		
+		return null;
 	}
 
 }

@@ -8,14 +8,27 @@ public class VirtualPetApp {
 
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("What is the new pets name?");
-		String petName = input.nextLine();
-		System.out.println("Welcome " + petName);
-//		System.out.println(VirtualPetShelter.newName);
-//		VirtualPetShelter.makeNewPet();
-//		System.out.println("Welcome to the shelter " + VirtualPetShelter.getNewPetName());
-//		
-//		
+		String shelter = "funded";
+		
+		do {
+			for (int funds = 1; funds > 0; VirtualPetShelter.Tick()) {
+			if (funds == 0) {
+				shelter = "unfunded";
+				break;
+			}
+			}
+		} while (shelter.contentEquals("funded"));
+/*Menu you to give options
+ * scanner input to choose option
+ * option to put in a new pet method programmed .put
+ * option to check on a new pet
+ * option to see the shelter
+ * option to see a specific pet
+ * option to adopt a pet... .remove?
+ * option to walk a pet
+ * option to feed a pet
+ * option to water a pet
+ */
 		
 		input.close();
 	}
