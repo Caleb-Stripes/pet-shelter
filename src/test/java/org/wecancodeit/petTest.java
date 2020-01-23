@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class petTest {
 
-	VirtualPet underTest = new VirtualPet(0, 0, 0, null, null);
+	VirtualPet underTest = new VirtualPet(0, 0, 0, null, null, null);
 	
 		@Test
 		public void hungerShouldBeZeroAtStart() {
