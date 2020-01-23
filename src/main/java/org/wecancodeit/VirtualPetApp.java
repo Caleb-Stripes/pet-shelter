@@ -3,35 +3,87 @@ package org.wecancodeit;
 import java.util.Scanner;
 
 public class VirtualPetApp {
+	public static String name;
 
 	public static void main(String[] args) {
 
+		VirtualPetShelter pets = new VirtualPetShelter();
 		Scanner input = new Scanner(System.in);
-		
-		String shelter = "funded";
-		
+
+		int x = 0;
 		do {
-			for (int funds = 1; funds > 0; funds = (funds - VirtualPetShelter.Tick())) {
-			if (funds == 0) {
-				shelter = "unfunded";
-				break;
+
+			System.out.println("");
+
+			// check pets in shelter
+			System.out.println("Would you like to see the Roster? y/n");
+			String answer = input.nextLine();
+			if (answer.contains("y")) {
+				pets.getRoster();
 			}
+			System.out.println("");
+
+			// caring for pets
+			careMenu();
+			String userChoice = input.nextLine();
+
+			// admittance
+			if (userChoice.contentEquals("0")) {
+				System.out.println("What is the pet's name?");
+				name = input.nextLine();
+				VirtualPet pet = new VirtualPet(0, 0, 0, getName(), "Alive");
+				pets.addNewPetToShelter(pet);
 			}
-		} while (shelter.contentEquals("funded"));
-/*Menu you to give options
- * scanner input to choose option
- * option to put in a new pet method programmed .put
- * option to check on a new pet
- * option to see the shelter
- * option to see a specific pet
- * option to adopt a pet... .remove?
- * option to walk a pet
- * option to feed a pet
- * option to water a pet
- */
-		System.out.println("Unfotunatly the shelter has insufficent funds to operate.");
-		System.out.println("All pets have been relocated to other shelters.");
+			//feed them
+			if (userChoice.contains("1")) {
+				pets.feedAll();
+				System.out.println("Pets love food!");
+				System.out.println("");
+			}
+			//water them
+			else if (userChoice.contentEquals("2")) {
+				pets.waterAll();
+				System.out.println("They lap it up!");
+				System.out.println("");
+			} 
+			//play with them
+			else if (userChoice.contentEquals("3")) {
+				pets.walkAll();
+				System.out.println("Riots at the pet park!");
+				System.out.println("");
+			} 
+			//ignore them
+			else if (userChoice.contentEquals("4")) {
+				System.out.println("Sad eyes watch you.");
+				System.out.println("");
+			} 
+			else if (userChoice.contentEquals("end")) {
+				x = 1;
+				System.out.println("");
+			} 
+			else {
+			}
+			// tick
+			pets.tickThePets();
+		} while (x == 0);
+
+		System.out.println("This shelter has been closed.");
 		input.close();
+	}
+
+	private static void careMenu() {
+		System.out.println("Here are care optons:");
+		System.out.println(" 0. Add a pet to the shelter.");
+		System.out.println(" 1. Feed All Pets");
+		System.out.println(" 2. Water All Pets");
+		System.out.println(" 3. Walk All Pets");
+		System.out.println(" 4. Skip Care");
+		System.out.println(" To leave the shelter type \" end \"");
+
+	}
+
+	private static String getName() {
+		return name;
 	}
 
 }

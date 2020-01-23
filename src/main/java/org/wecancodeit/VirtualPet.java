@@ -14,6 +14,13 @@ public class VirtualPet {
 		this.status = status;
 		this.petName = petName;
 	}
+	
+	public void tick() {
+		this.hunger++;
+		this.thirst++;
+		this.boredom++;
+		
+	}
 
 	public void shelterPet() {
 		this.hunger = 5;
@@ -75,44 +82,6 @@ public class VirtualPet {
 		return this.boredom;
 	}
 
-	String fetchThing = null;
-
-	public String fetch() {
-		int fetchRand = (int) (Math.random() * 10 + 1);
-		if (fetchRand <= 3) {
-			fetchThing = petName + " brings you a red ball.";
-		}
-		if (fetchRand == 4) {
-			fetchThing = petName + " drags over a large branch.";
-		}
-		if (fetchRand == 5) {
-			fetchThing = petName
-					+ " crouches in front of you and regurgitates some bright yellow bile with rubber bits in it.";
-		}
-		if (fetchRand == 6) {
-			fetchThing = petName
-					+ " stares at you in confusion, while the stick you threw sinks into a mud puddle, \nas if to say \"That was foolish, now you have to get muddy\".";
-		}
-		if (fetchRand == 7 || fetchRand == 8) {
-			fetchThing = petName + " fetches the thing you threw, but now it is coverd in slobber.";
-		}
-		if (fetchRand == 9) {
-			fetchThing = petName
-					+ " is gone for a very long time, so long you begin to worry. \nAfter searching for 20 minutes you find \n"
-					+ petName + " sleeping in its bed.";
-		}
-		if (fetchRand == 10) {
-			fetchThing = petName + " and you play a loving game of catch.";
-		}
-		return fetchThing;
-	}
-
-	public void tick() {
-		this.hunger++;
-		this.thirst++;
-		this.boredom++;
-
-	}
 
 	public static String hungerWarning;
 	public static String thirstWarning;
@@ -149,4 +118,35 @@ public class VirtualPet {
 
 	}
 
+	String fetchThing = null;
+	
+	public String fetch() {
+		int fetchRand = (int) (Math.random() * 10 + 1);
+		if (fetchRand <= 3) {
+			fetchThing = petName + " brings you a red ball.";
+		}
+		if (fetchRand == 4) {
+			fetchThing = petName + " drags over a large branch.";
+		}
+		if (fetchRand == 5) {
+			fetchThing = petName
+					+ " crouches in front of you and regurgitates some bright yellow bile with rubber bits in it.";
+		}
+		if (fetchRand == 6) {
+			fetchThing = petName
+					+ " stares at you in confusion, while the stick you threw sinks into a mud puddle, \nas if to say \"That was foolish, now you have to get muddy\".";
+		}
+		if (fetchRand == 7 || fetchRand == 8) {
+			fetchThing = petName + " fetches the thing you threw, but now it is coverd in slobber.";
+		}
+		if (fetchRand == 9) {
+			fetchThing = petName
+					+ " is gone for a very long time, so long you begin to worry. \nAfter searching for 20 minutes you find \n"
+					+ petName + " sleeping in its bed.";
+		}
+		if (fetchRand == 10) {
+			fetchThing = petName + " and you play a loving game of catch.";
+		}
+		return fetchThing;
+	}
 }
