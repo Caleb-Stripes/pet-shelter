@@ -24,6 +24,8 @@ console testing
 **************************************
 Foreseeable ToDos:
 
+code description for admittance
 
+individual play and adoption
 
 

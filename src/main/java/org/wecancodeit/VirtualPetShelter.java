@@ -37,6 +37,12 @@ public class VirtualPetShelter {
 	public String getNewPetName() {
 		return newPetName;
 	}
+	
+	public String newPetDescription;
+
+	public String getNewPetDescription() {
+		return newPetDescription;
+	}
 
 	public void addNewPetToShelter(VirtualPet pet) {
 		shelter.put(getPetKey(), pet);
@@ -66,6 +72,17 @@ public class VirtualPetShelter {
 		for (VirtualPet pet : getAllPets()) {
 			pet.play();
 		}
+		
+	}
+
+	public void adoptPet(String userAdopt) {
+		for (VirtualPet pet : getAllPets()) {
+			
+			if (userAdopt.contentEquals(this.petKey)) {
+				
+			}
+		}
+		
 		
 	}
 	

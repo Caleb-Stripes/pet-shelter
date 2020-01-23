@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class VirtualPetApp {
 	public static String name;
-
+	public static String description;
 	public static void main(String[] args) {
 
 		VirtualPetShelter pets = new VirtualPetShelter();
@@ -31,7 +31,9 @@ public class VirtualPetApp {
 			if (userChoice.contentEquals("0")) {
 				System.out.println("What is the pet's name?");
 				name = input.nextLine();
-				VirtualPet pet = new VirtualPet(0, 0, 0, getName(), "Alive");
+				System.out.println("Describe" + name);
+				description = input.nextLine();
+				VirtualPet pet = new VirtualPet(0, 0, 0, getName(), "Alive", getDescription());
 				pets.addNewPetToShelter(pet);
 			}
 			//feed them
@@ -61,6 +63,12 @@ public class VirtualPetApp {
 				x = 1;
 				System.out.println("");
 			} 
+			else if (userChoice.contains("5")) {
+				System.out.println("Who would you like to adopt?");
+				pets.getRoster();
+				String userAdopt = input.nextLine();
+				pets.adoptPet(userAdopt);
+			}
 			else {
 			}
 			// tick
@@ -71,6 +79,11 @@ public class VirtualPetApp {
 		input.close();
 	}
 
+	private static String getDescription() {
+		
+		return description;
+	}
+
 	private static void careMenu() {
 		System.out.println("Here are care optons:");
 		System.out.println(" 0. Add a pet to the shelter.");
@@ -78,6 +91,7 @@ public class VirtualPetApp {
 		System.out.println(" 2. Water All Pets");
 		System.out.println(" 3. Walk All Pets");
 		System.out.println(" 4. Skip Care");
+		System.out.println(" 5. Adopt a pet");
 		System.out.println(" To leave the shelter type \" end \"");
 
 	}
