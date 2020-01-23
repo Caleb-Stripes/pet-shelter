@@ -31,7 +31,7 @@ public class VirtualPetApp {
 			if (userChoice.contentEquals("0")) {
 				System.out.println("What is the pet's name?");
 				name = input.nextLine();
-				System.out.println("Describe" + name);
+				System.out.println("Describe " + name);
 				description = input.nextLine();
 				VirtualPet pet = new VirtualPet(0, 0, 0, getName(), "Alive", getDescription());
 				pets.addNewPetToShelter(pet);
@@ -104,6 +104,7 @@ public class VirtualPetApp {
 		System.out.println(" 3. Walk All Pets");
 		System.out.println(" 4. Skip Care");
 		System.out.println(" 5. Adopt a pet");
+		System.out.println(" 6. Play with someone");
 		System.out.println(" To leave the shelter type \" end \"");
 
 	}

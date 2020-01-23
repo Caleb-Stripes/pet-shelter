@@ -50,7 +50,7 @@ public class VirtualPetShelter {
 
 	public void getRoster() {
 		for (VirtualPet pet : getAllPets()) {
-			System.out.println(this.petKey + pet.petName);
+			System.out.println(this.petKey + " " + pet.petName);
 		}
 	}
 
@@ -88,6 +88,7 @@ public class VirtualPetShelter {
 		for (VirtualPet pet : getAllPets()) {
 			if (pet.petName.contentEquals(userPlay)) {
 				pet.fetch();
+				System.out.println(pet.fetchThing);
 			}
 		}
 		
