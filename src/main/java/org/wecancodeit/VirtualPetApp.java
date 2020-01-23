@@ -63,11 +63,15 @@ public class VirtualPetApp {
 				x = 1;
 				System.out.println("");
 			} 
+			//adopting
 			else if (userChoice.contains("5")) {
 				System.out.println("Who would you like to adopt?");
 				pets.getRoster();
+				System.out.println("Type the name exactly as it appears.");
 				String userAdopt = input.nextLine();
 				pets.adoptPet(userAdopt);
+				System.out.println("You and " + userAdopt + " have a nice life toghether.");
+				System.out.println("");
 			}
 			else {
 			}

@@ -37,7 +37,7 @@ public class VirtualPetShelter {
 	public String getNewPetName() {
 		return newPetName;
 	}
-	
+
 	public String newPetDescription;
 
 	public String getNewPetDescription() {
@@ -58,44 +58,35 @@ public class VirtualPetShelter {
 		for (VirtualPet pet : getAllPets()) {
 			pet.eat();
 		}
-		
+
 	}
 
 	public void waterAll() {
 		for (VirtualPet pet : getAllPets()) {
 			pet.drink();
 		}
-		
+
 	}
 
 	public void walkAll() {
 		for (VirtualPet pet : getAllPets()) {
 			pet.play();
 		}
-		
+
 	}
 
 	public void adoptPet(String userAdopt) {
 		for (VirtualPet pet : getAllPets()) {
-			
-			if (userAdopt.contentEquals(this.petKey)) {
-				
+			if (pet.petName.contentEquals(userAdopt)) {
+				shelter.remove(this.petKey);
 			}
 		}
-		
-		
+
 	}
-	
-	
-
-
-	
-	
-	
 }
-	
-	
-	// was designed to enter custom not default values for the parameters of a new pet	
+
+// was designed to enter custom not default values for the parameters of a new
+// pet
 //	private int newPetHunger;
 //	private int newPetThirst;
 //	private int newPetBoredom;
@@ -130,11 +121,11 @@ public class VirtualPetShelter {
 //
 //	}
 
-	// This method will create the blank slate for a new pet so that after pet
-	// creation
-	// Variables will be reset...I am not certain I need this, unless for some
-	// reason
-	// the variables where to be static.
+// This method will create the blank slate for a new pet so that after pet
+// creation
+// Variables will be reset...I am not certain I need this, unless for some
+// reason
+// the variables where to be static.
 
 // used for custom new pet parameter values
 //	int shelterSize;
@@ -151,4 +142,3 @@ public class VirtualPetShelter {
 //		int cost = (getShelterSize() * 2);
 //		return (funds - cost);
 //	}
-
