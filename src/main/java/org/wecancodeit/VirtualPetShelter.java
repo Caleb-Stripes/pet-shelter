@@ -83,6 +83,15 @@ public class VirtualPetShelter {
 		}
 
 	}
+
+	public void playPet(String userPlay) {
+		for (VirtualPet pet : getAllPets()) {
+			if (pet.petName.contentEquals(userPlay)) {
+				pet.fetch();
+			}
+		}
+		
+	}
 }
 
 // was designed to enter custom not default values for the parameters of a new
